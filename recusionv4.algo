@@ -1,0 +1,32 @@
+FUNCTION IsPalindrome(word:STRING) : BOOLEAN
+VAR
+    i , j : INTEGER ;
+BEGIN
+    i := 1 ;
+    j := word.length;
+
+    FOR i FROM 0 TO word.length STEP 1  DO
+        FOR j FROM word.length TO 0 STEP 1  DO
+            IF (word[i] <> word[j]) THEN
+            IsPalindrome := False ;
+            ELSE
+                
+                IsPalindrome := true ;
+                
+            END_IF
+        END_FOR
+    END_FOR
+END
+
+ALGORITHM Palindrome
+VAR
+    word : STRING;
+BEGIN
+    Write("enter a word : ")
+    read(word)
+    IF (IsPalindrome(word)) THEN
+        write(word , "is palindrome .")
+    ELSE
+    write(word , "is not a palindrome .")
+    END_IF
+END
